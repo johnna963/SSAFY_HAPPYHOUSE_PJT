@@ -1,0 +1,676 @@
+[2m2021-11-19 17:43:27.723[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [2m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2m2021-11-19 17:43:27.725[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [2m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2m2021-11-19 17:43:28.692[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 9999 (http)
+[2m2021-11-19 17:43:28.734[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 1008 ms
+[2m2021-11-19 17:43:29.334[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [2m:[0;39m LiveReload server is running on port 35729
+[2m2021-11-19 17:43:29.652[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 9999 (http) with context path '/vue'
+[2m2021-11-19 17:43:42.006[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2021-11-19 17:43:42.008[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 1 ms
+[2m2021-11-19 17:43:43.281[0;39m [31mERROR[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mcom.zaxxer.hikari.pool.HikariPool       [0;39m [2m:[0;39m HikariPool-1 - Exception during pool initialization.
+
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:159)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:117)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:89)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	at com.sun.proxy.$Proxy81.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:160)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:145)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at com.sun.proxy.$Proxy102.findPw(Unknown Source)
+	at com.ssafy.vue.model.service.MemberServiceImpl.findPw(MemberServiceImpl.java:56)
+	at com.ssafy.vue.model.service.MemberServiceImpl$$FastClassBySpringCGLIB$$8039aeee.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.ssafy.vue.model.service.MemberServiceImpl$$EnhancerBySpringCGLIB$$9d7c8844.findPw(<generated>)
+	at com.ssafy.vue.controller.MemberController.findPw(MemberController.java:110)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+[2m2021-11-19 17:43:43.294[0;39m [31mERROR[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.a.c.c.C.[.[.[.[dispatcherServlet]     [0;39m [2m:[0;39m Servlet.service() for servlet [dispatcherServlet] in context with path [/vue] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+### The error may exist in file [/Users/kimdayeong/Desktop/Spring_youtube/happyhouse_back/target/classes/mappers/member.xml]
+### The error may involve com.ssafy.vue.model.mapper.MemberMapper.findPw
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)] with root cause
+
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:159)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:117)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:89)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	at com.sun.proxy.$Proxy81.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:160)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:145)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at com.sun.proxy.$Proxy102.findPw(Unknown Source)
+	at com.ssafy.vue.model.service.MemberServiceImpl.findPw(MemberServiceImpl.java:56)
+	at com.ssafy.vue.model.service.MemberServiceImpl$$FastClassBySpringCGLIB$$8039aeee.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.ssafy.vue.model.service.MemberServiceImpl$$EnhancerBySpringCGLIB$$9d7c8844.findPw(<generated>)
+	at com.ssafy.vue.controller.MemberController.findPw(MemberController.java:110)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+[2m2021-11-19 17:44:05.485[0;39m [31mERROR[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mcom.zaxxer.hikari.pool.HikariPool       [0;39m [2m:[0;39m HikariPool-1 - Exception during pool initialization.
+
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:159)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:117)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:89)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	at com.sun.proxy.$Proxy81.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:160)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:145)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at com.sun.proxy.$Proxy102.findPw(Unknown Source)
+	at com.ssafy.vue.model.service.MemberServiceImpl.findPw(MemberServiceImpl.java:56)
+	at com.ssafy.vue.model.service.MemberServiceImpl$$FastClassBySpringCGLIB$$8039aeee.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.ssafy.vue.model.service.MemberServiceImpl$$EnhancerBySpringCGLIB$$9d7c8844.findPw(<generated>)
+	at com.ssafy.vue.controller.MemberController.findPw(MemberController.java:110)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+[2m2021-11-19 17:44:05.997[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 9999 (http)
+[2m2021-11-19 17:44:06.002[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 286 ms
+[2m2021-11-19 17:44:06.163[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [2m:[0;39m LiveReload server is running on port 35729
+[2m2021-11-19 17:44:06.247[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 9999 (http) with context path '/vue'
+[2m2021-11-19 17:44:06.318[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.ConditionEvaluationDeltaLoggingListener[0;39m [2m:[0;39m Condition evaluation unchanged
+[2m2021-11-19 17:44:17.555[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2021-11-19 17:44:17.557[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 1 ms
+[2m2021-11-19 17:44:46.758[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.s.vue.controller.HouseMapController   [0;39m [2m:[0;39m sido - 호출
+[2m2021-11-19 17:44:50.755[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.s.vue.controller.HouseMapController   [0;39m [2m:[0;39m gugun - 호출
+[2m2021-11-19 17:48:45.075[0;39m [31mERROR[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mo.a.c.c.C.[.[.[.[dispatcherServlet]     [0;39m [2m:[0;39m Servlet.service() for servlet [dispatcherServlet] in context with path [/vue] threw exception [Request processing failed; nested exception is org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'dayoung' for key 'ssafy_member.PRIMARY'
+### The error may exist in file [/Users/kimdayeong/Desktop/Spring_youtube/happyhouse_back/target/classes/mappers/member.xml]
+### The error may involve com.ssafy.vue.model.mapper.MemberMapper.join-Inline
+### The error occurred while setting parameters
+### SQL: insert into ssafy_member (userid, userpwd, username, email)   values (?, ?, ?, ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'dayoung' for key 'ssafy_member.PRIMARY'
+; Duplicate entry 'dayoung' for key 'ssafy_member.PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'dayoung' for key 'ssafy_member.PRIMARY'] with root cause
+
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'dayoung' for key 'ssafy_member.PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:371)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:194)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:181)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	at com.sun.proxy.$Proxy81.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:145)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at com.sun.proxy.$Proxy104.join(Unknown Source)
+	at com.ssafy.vue.model.service.MemberServiceImpl.join(MemberServiceImpl.java:63)
+	at com.ssafy.vue.model.service.MemberServiceImpl$$FastClassBySpringCGLIB$$8039aeee.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.ssafy.vue.model.service.MemberServiceImpl$$EnhancerBySpringCGLIB$$9d7c8844.join(<generated>)
+	at com.ssafy.vue.controller.MemberController.join(MemberController.java:138)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+[2m2021-11-19 17:49:23.140[0;39m [32mDEBUG[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 토큰정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjM3MzExNzYzMDkyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzczMTUzNjMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6ImRheW91bmcyIn0.2uKUlA534h_Q4pokErmOwTcRiP3K-qvuKxYBVi_cj6g
+[2m2021-11-19 17:49:23.265[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2021-11-19 17:49:27.940[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 17:49:36.707[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m writeArticle - 호출
+[2m2021-11-19 17:49:37.990[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 17:49:38.906[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 4
+[2m2021-11-19 17:49:39.650[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 4
+[2m2021-11-19 17:49:41.242[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m modifyArticle - 호출
+[2m2021-11-19 17:49:42.207[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 17:49:43.516[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 4
+[2m2021-11-19 17:49:45.370[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m deleteArticle - 호출
+[2m2021-11-19 17:49:45.374[0;39m [31mERROR[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mo.a.c.c.C.[.[.[.[dispatcherServlet]     [0;39m [2m:[0;39m Servlet.service() for servlet [dispatcherServlet] in context with path [/vue] threw exception [Request processing failed; nested exception is org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.ssafy.vue.model.mapper.NoticeMapper.deleteMemo] with root cause
+
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.ssafy.vue.model.mapper.NoticeMapper.deleteMemo
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:235)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:53)
+	at org.apache.ibatis.binding.MapperProxy.lambda$cachedInvoker$0(MapperProxy.java:108)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
+	at org.apache.ibatis.util.MapUtil.computeIfAbsent(MapUtil.java:36)
+	at org.apache.ibatis.binding.MapperProxy.cachedInvoker(MapperProxy.java:95)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at com.sun.proxy.$Proxy108.deleteMemo(Unknown Source)
+	at com.ssafy.vue.model.service.NoticeServiceImpl.deleteArticle(NoticeServiceImpl.java:73)
+	at com.ssafy.vue.model.service.NoticeServiceImpl$$FastClassBySpringCGLIB$$19b2ff0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.ssafy.vue.model.service.NoticeServiceImpl$$EnhancerBySpringCGLIB$$d50bc8a.deleteArticle(<generated>)
+	at com.ssafy.vue.controller.NoticeController.deleteArticle(NoticeController.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+[2m2021-11-19 17:50:38.775[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 9999 (http)
+[2m2021-11-19 17:50:38.782[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 742 ms
+[2m2021-11-19 17:50:39.005[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [2m:[0;39m LiveReload server is running on port 35729
+[2m2021-11-19 17:50:39.133[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 9999 (http) with context path '/vue'
+[2m2021-11-19 17:50:39.302[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.ConditionEvaluationDeltaLoggingListener[0;39m [2m:[0;39m Condition evaluation unchanged
+[2m2021-11-19 17:50:40.020[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2021-11-19 17:50:40.024[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 2 ms
+[2m2021-11-19 17:50:40.032[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 17:50:41.384[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 4
+[2m2021-11-19 17:50:42.249[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 4
+[2m2021-11-19 17:50:42.964[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 17:50:44.059[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 4
+[2m2021-11-19 17:50:46.035[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m deleteArticle - 호출
+[2m2021-11-19 17:50:46.039[0;39m [31mERROR[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mo.a.c.c.C.[.[.[.[dispatcherServlet]     [0;39m [2m:[0;39m Servlet.service() for servlet [dispatcherServlet] in context with path [/vue] threw exception [Handler dispatch failed; nested exception is java.lang.Error: Unresolved compilation problem: 
+	The method deleteMemo(int) is undefined for the type NoticeMapper
+] with root cause
+
+java.lang.Error: Unresolved compilation problem: 
+	The method deleteMemo(int) is undefined for the type NoticeMapper
+
+	at com.ssafy.vue.model.service.NoticeServiceImpl.deleteArticle(NoticeServiceImpl.java:73)
+	at com.ssafy.vue.model.service.NoticeServiceImpl$$FastClassBySpringCGLIB$$19b2ff0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.ssafy.vue.model.service.NoticeServiceImpl$$EnhancerBySpringCGLIB$$d50bc8a.deleteArticle(<generated>)
+	at com.ssafy.vue.controller.NoticeController.deleteArticle(NoticeController.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+[2m2021-11-19 17:51:12.227[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 9999 (http)
+[2m2021-11-19 17:51:12.233[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 263 ms
+[2m2021-11-19 17:51:12.568[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [2m:[0;39m LiveReload server is running on port 35729
+[2m2021-11-19 17:51:12.623[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 9999 (http) with context path '/vue'
+[2m2021-11-19 17:51:12.678[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.ConditionEvaluationDeltaLoggingListener[0;39m [2m:[0;39m Condition evaluation unchanged
+[2m2021-11-19 17:51:15.192[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2021-11-19 17:51:15.194[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 1 ms
+[2m2021-11-19 17:51:15.196[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m deleteArticle - 호출
+[2m2021-11-19 17:51:15.265[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 17:51:20.317[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 17:51:30.696[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m writeArticle - 호출
+[2m2021-11-19 17:51:32.013[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 17:51:32.949[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m getArticle - 호출 : 9
+[2m2021-11-19 17:51:34.526[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m deleteArticle - 호출
+[2m2021-11-19 17:51:34.555[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 17:51:41.444[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.s.vue.controller.HouseMapController   [0;39m [2m:[0;39m sido - 호출
+[2m2021-11-19 17:51:43.011[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.s.vue.controller.HouseMapController   [0;39m [2m:[0;39m gugun - 호출
+[2m2021-11-19 17:58:05.490[0;39m [32m INFO[0;39m [35m12155[0;39m [2m---[0;39m [2m[on(2)-127.0.0.1][0;39m [36minMXBeanRegistrar$SpringApplicationAdmin[0;39m [2m:[0;39m Application shutdown requested.
+[2m2021-11-19 19:17:09.115[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [2m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2m2021-11-19 19:17:09.121[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [2m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2m2021-11-19 19:17:10.973[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 9999 (http)
+[2m2021-11-19 19:17:11.053[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 1932 ms
+[2m2021-11-19 19:17:12.057[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [2m:[0;39m LiveReload server is running on port 35729
+[2m2021-11-19 19:17:12.293[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 9999 (http) with context path '/vue'
+[2m2021-11-19 19:18:11.549[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2021-11-19 19:18:11.555[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 3 ms
+[2m2021-11-19 19:18:11.594[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:18:25.146[0;39m [32mDEBUG[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 토큰정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjM3MzE3MTA1MTI0LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzczMjA3MDUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6ImRheW91bmcifQ.UUy-dE4AEwAPIGEqO8t-hHYhOx-R1s4WOnOcBssodvA
+[2m2021-11-19 19:18:25.202[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2021-11-19 19:18:26.308[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:18:27.400[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 3
+[2m2021-11-19 19:18:29.978[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:18:34.704[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m writeArticle - 호출
+[2m2021-11-19 19:18:35.787[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:18:36.988[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 5
+[2m2021-11-19 19:18:37.763[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 5
+[2m2021-11-19 19:18:39.133[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m modifyArticle - 호출
+[2m2021-11-19 19:18:40.080[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:18:41.768[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 5
+[2m2021-11-19 19:18:43.256[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:20:08.533[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:20:12.336[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:20:18.619[0;39m [32mDEBUG[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 토큰정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjM3MzE3MjE4NjE4LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzczMjA4MTgsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6ImRheW91bmcifQ.YCi66UIieTELFIgfPIEpkYartvBzLZcGiCwQWZuVPaY
+[2m2021-11-19 19:20:18.638[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2021-11-19 19:20:19.557[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:20:20.676[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m getArticle - 호출 : 5
+[2m2021-11-19 19:20:21.770[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:20:31.747[0;39m [32mDEBUG[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 토큰정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjM3MzE3MjMxNzQ3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzczMjA4MzEsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6InNzYWZ5In0.UJz0lqdvq61cHbOfV3VKAf_sS31Y43H9ezDvoPQHFJs
+[2m2021-11-19 19:20:31.775[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2021-11-19 19:20:32.731[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:20:33.493[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m getArticle - 호출 : 8
+[2m2021-11-19 19:21:27.569[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:21:28.850[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 5
+[2m2021-11-19 19:21:29.834[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:21:30.624[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 3
+[2m2021-11-19 19:21:31.272[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:21:42.427[0;39m [32mDEBUG[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 토큰정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjM3MzE3MzAyNDI3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzczMjA5MDIsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6ImFkbWluIn0.0nfrCu4hFt1agrCbC3MMmBFZpEoKUopmlaPqPRE1Ucs
+[2m2021-11-19 19:21:42.455[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2021-11-19 19:21:43.290[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:21:44.436[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 5
+[2m2021-11-19 19:21:46.652[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:21:47.349[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 3
+[2m2021-11-19 19:21:48.333[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:21:55.734[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 5
+[2m2021-11-19 19:21:56.901[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:21:58.506[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:21:59.050[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 1
+[2m2021-11-19 19:22:00.418[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:22:02.250[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 3
+[2m2021-11-19 19:22:03.014[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:22:12.077[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 5
+[2m2021-11-19 19:22:23.731[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:22:25.283[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 5
+[2m2021-11-19 19:22:26.228[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:22:36.777[0;39m [32mDEBUG[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 토큰정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjM3MzE3MzU2Nzc3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzczMjA5NTYsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6ImRheW91bmcifQ.pOIdSLVW1NJKbGB2AoMMDMPNwYqHAvtf6VVYMgrRlcc
+[2m2021-11-19 19:22:36.795[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2021-11-19 19:22:38.383[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:22:39.602[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 5
+[2m2021-11-19 19:22:41.260[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:22:41.987[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 3
+[2m2021-11-19 19:22:42.820[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:22:43.383[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 1
+[2m2021-11-19 19:22:44.143[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:25:02.407[0;39m [32mDEBUG[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 토큰정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjM3MzE3NTAyNDAzLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzczMjExMDIsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6ImRheW91bmcifQ.qEVOJafnbOWIIZvUkFCuKQHQk_c10JpTkZTaDklru0Q
+[2m2021-11-19 19:25:02.436[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2021-11-19 19:25:03.406[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:26:11.375[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:26:11.396[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:26:11.413[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:26:20.296[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.s.vue.controller.HouseMapController   [0;39m [2m:[0;39m sido - 호출
+[2m2021-11-19 19:26:24.775[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:26:26.940[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 5
+[2m2021-11-19 19:26:28.197[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:26:31.269[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 3
+[2m2021-11-19 19:26:31.915[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:26:33.192[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.s.vue.controller.HouseMapController   [0;39m [2m:[0;39m sido - 호출
+[2m2021-11-19 19:27:01.555[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:27:02.522[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 5
+[2m2021-11-19 19:27:05.234[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m deleteArticle - 호출
+[2m2021-11-19 19:27:05.261[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:27:15.934[0;39m [32mDEBUG[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 토큰정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjM3MzE3NjM1OTMyLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzczMjEyMzUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6InNzYWZ5In0.38DC7UU0e5SH58xEyZk0mgemL-h-Adk4uhJutqo4FJk
+[2m2021-11-19 19:27:15.952[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2021-11-19 19:27:16.671[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:27:17.884[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 3
+[2m2021-11-19 19:27:19.555[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m deleteArticle - 호출
+[2m2021-11-19 19:27:19.583[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:27:20.372[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 1
+[2m2021-11-19 19:27:21.535[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m deleteArticle - 호출
+[2m2021-11-19 19:27:21.566[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:27:33.828[0;39m [32mDEBUG[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 토큰정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjM3MzE3NjUzODI3LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzczMjEyNTMsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6ImFkbWluIn0.Pu9NXukWstzGnoeiYSRM4ihyN4CylSX2uvEFZj2GL8o
+[2m2021-11-19 19:27:33.842[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2021-11-19 19:27:36.727[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:32:15.804[0;39m [32mDEBUG[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 토큰정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjM3MzE3OTM1ODAxLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzczMjE1MzUsInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6ImFkbWluIn0.FxKxBlLKTEr1MHCSjQCGe3xPGrVjc-y6UUubZk5qGVo
+[2m2021-11-19 19:32:15.833[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2021-11-19 19:32:16.940[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:32:34.749[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:34:42.645[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:35:10.108[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m writeArticle - 호출
+[2m2021-11-19 19:35:11.620[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:35:13.749[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-5][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 6
+[2m2021-11-19 19:35:17.948[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 6
+[2m2021-11-19 19:35:23.537[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-7][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m modifyArticle - 호출
+[2m2021-11-19 19:35:24.453[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-8][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:35:29.576[0;39m [32mDEBUG[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-9][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 로그인 토큰정보 : eyJ0eXAiOiJKV1QiLCJyZWdEYXRlIjoxNjM3MzE4MTI5NTc0LCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzczMjE3MjksInN1YiI6ImFjY2Vzcy10b2tlbiIsInVzZXJpZCI6ImRheW91bmcifQ.TdAwKcsP_IKJtZte50-SMlucAiZOvMoWSDLYeSXtZ2o
+[2m2021-11-19 19:35:29.595[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[io-9999-exec-10][0;39m [36mc.ssafy.vue.controller.MemberController [0;39m [2m:[0;39m 사용 가능한 토큰!!!
+[2m2021-11-19 19:35:30.714[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-1][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:35:31.936[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-2][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m getArticle - 호출 : 6
+[2m2021-11-19 19:35:34.141[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-3][0;39m [36mc.ssafy.vue.controller.NoticeController [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:35:35.850[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-4][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:37:25.790[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[nio-9999-exec-6][0;39m [36mc.ssafy.vue.controller.BoardController  [0;39m [2m:[0;39m listArticle - 호출
+[2m2021-11-19 19:43:20.836[0;39m [32m INFO[0;39m [35m18980[0;39m [2m---[0;39m [2m[on(2)-127.0.0.1][0;39m [36minMXBeanRegistrar$SpringApplicationAdmin[0;39m [2m:[0;39m Application shutdown requested.
